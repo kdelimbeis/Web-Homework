@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css'>
+    <style>
+      body {
+        padding: 2em;
+      }
+      .column {
+        width: 24%;
+        border: 4px dotted black;
+        min-height: 30em;
+      }
+
+      .left {
+        float: left;
+        background: url('127.jpg') no-repeat;
+        background-size: 100%;
+      }
+
+      .right {
+        float: right;
+        background: url('721.jpg') no-repeat;
+        background-size: 100%;
+      }
+
+      .middleLeft {
+      	float: left;
+        background: url('001.jpg') no-repeat;
+        background-size: 100%;
+      }
+
+      .middleRight {
+      	float: right;
+        background: url('299.jpg') no-repeat;
+        background-size: 100%;
+      }
+
+      /* Mobile stylings */
+      @media all and (max-width: 400px) {
+          .left, .right, .middleLeft, .middleRight {
+            float: none;
+          }
+
+          .column {
+            width: 100%;
+          }
+
+          body {
+            padding: .5em;
+          }
+
+          .middleLeft {
+            background-image: url('042.jpg');
+            background-size: 80%;
+          }
+          .middleRight {
+            background-image: url('103_0550.jpg');
+            background-size: 80%;
+          }
+      }
+
+      /* Tablet stylings */
+      @media all and (min-width: 401px) and (max-width: 900px) {
+        .column {
+          width: 24%;
+        }
+        .middleLeft {
+            background-image: url('191.jpg');
+            background-size: 80%;
+      }
+     	 .middleRight {
+            background-image: url('1367.jpg');
+            background-size: 80%;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="column left">
+      <p>this is some left content</p>
+          </div>
+
+    <div class="column middleLeft">
+      <p>this is some middle content floating left</p>
+    </div>
+
+    <div class="column right">
+      <p>this is some right content</p>
+    </div>
+
+    <div class="column middleRight"
+      <p>this is some middle content floating right</p>
+    </div>
+    
+  </body>
+
+</html>
