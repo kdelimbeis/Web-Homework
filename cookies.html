@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="cookies.js"></script>
+    <style>
+      img {
+        width: 15em;
+        height: 10em;
+        border: 2px dotted black;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function() {
+        var current_sugar_count = Cookies.get('sugar-key')
+        $('#sugar-count').html(current_sugar_count)
+
+        $('#sugar').click(function() {
+          var current_sugar_count = parseInt(Cookies.get('sugar-key'))
+
+          if (!current_sugar_count) {
+            current_sugar_count = 0
+          }
+          var new_sugar_count = current_sugar_count + 1
+          Cookies.set('sugar-key', new_sugar_count)
+          $('#sugar-count').html(new_sugar_count)
+        })
+
+        var current_chocolate_count = Cookies.get('chocolate-key')
+        $('#chocolate-count').html(current_chocolate_count)
+
+        $('#chocolate').click(function() {
+          var current_chocolate_count = parseInt(Cookies.get('chocolate-key'))
+
+          if (!current_chocolate_count) {
+            current_chocolate_count = 0
+          }
+          var new_chocolate_count = current_chocolate_count + 1
+          Cookies.set('chocolate-key', new_chocolate_count)
+          $('#chocolate-count').html(new_chocolate_count)
+        })
+
+
+        var current_lemon_count = Cookies.get('lemon-key')
+        $('#lemon-count').html(current_lemon_count)
+
+        $('#lemon').click(function() {
+          var current_lemon_count = parseInt(Cookies.get('lemon-key'))
+
+          if (!current_lemon_count) {
+            current_lemon_count = 0
+          }
+          var new_lemon_count = current_lemon_count + 1
+          Cookies.set('lemon-key', new_lemon_count)
+          $('#lemon-count').html(new_lemon_count)
+        })
+
+        $('#Ordered').click(function() {
+          Cookies.set('golden-key', 0)
+          $('#sugar-count').html(0)
+          Cookies.set('pug-key', 0)
+          $('#chocolate-count').html(0)
+          Cookies.set('pitbull-key', 0)
+          $('#lemon-count').html(0)
+        })
+
+      })
+    </script>
+  </head>
+
+  <body>
+    <button id='Ordered'>Number Ordered!</button>
+    <div class='cookie-container'>
+      <img id='sugar' src="http://www.cdkitchen.com/recipes/images/2012/11/73496-2727-mx.jpg"/>
+      <p id='sugar-count'>0</p>
+    </div>
+
+    <div class='cookie-container'>
+      <img id='chocolate' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWMJH6vWql9v6Gg9PsYSHCHb1AdO7cvLZghl5hkunovuJXgtg"/>
+      <p id='chocolate-count'>0</p>
+    </div>
+
+    <div class='cookie-container'>
+      <img id='lemon' src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQsvPIr3uoexHp2-iWPSTSkl0HDmAsDfUUbZGL-wkJj4UVjPIk-fA"/>
+      <p id='lemon-count'>0</p>
+    </div>
+  </body>
+</html>
